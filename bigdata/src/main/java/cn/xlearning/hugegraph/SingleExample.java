@@ -14,12 +14,19 @@ import org.apache.hugegraph.structure.gremlin.ResultSet;
 
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 public class SingleExample {
     public static void main(String[] args) {
-        HugeClient hugeClient = new HugeClientBuilder("http://localhost:8088", "hugegraph").build();
-        SchemaManager schema = hugeClient.schema();
-        schema.indexLabel("airportByCountry").onV("airport").by("country").secondary().ifNotExist().create();
+        HugeClient hugeClient = new HugeClientBuilder("http://localhost:8088", "risk").build();
+        GremlinManager gremlin = hugeClient.gremlin();
+        System.out.println("==== Path ====");
+        ResultSet resultSet = gremlin.gremlin("g.V().hasLabel('person').as('a').out('has_phone').has('phoneFlag', 'BLACK').as('b').select('a', 'b').by('name').by(id)").execute();
+        Iterator<Result> results = resultSet.iterator();
+        results.forEachRemaining(result -> {
+            Map<String, String> map = (Map<String, String>) result.getObject();
+            System.out.println(map.get("a") + "->" + map.get("b"));
+        });
         hugeClient.close();
     }
 }
