@@ -1,0 +1,23 @@
+server:
+  port: 8888
+logging:
+  path: logs
+  file: ruleEngine.log
+spring:
+  application:
+    name: ruleEngine
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://slave1:3306/knowledge_graph?serverTimezone=GMT
+    username: root
+    password: 123456
+mybatis:
+  type-aliases-package: cn.tongdun.rule
+  mapper-locations:
+    - mapper/*
+hugegraph:
+  datasource:
+    url: http://localhost:8088
+    username: hugegraph
+    password: 123456
+    graph: risk

@@ -1,0 +1,32 @@
+{
+  "groups": [
+    {
+      "name": "hugegraph.datasource",
+      "type": "cn.tongdun.rule.config.HugegraphProperties",
+      "sourceType": "cn.tongdun.rule.config.HugegraphProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "hugegraph.datasource.graph",
+      "type": "java.lang.String",
+      "sourceType": "cn.tongdun.rule.config.HugegraphProperties"
+    },
+    {
+      "name": "hugegraph.datasource.password",
+      "type": "java.lang.String",
+      "sourceType": "cn.tongdun.rule.config.HugegraphProperties"
+    },
+    {
+      "name": "hugegraph.datasource.url",
+      "type": "java.lang.String",
+      "sourceType": "cn.tongdun.rule.config.HugegraphProperties"
+    },
+    {
+      "name": "hugegraph.datasource.username",
+      "type": "java.lang.String",
+      "sourceType": "cn.tongdun.rule.config.HugegraphProperties"
+    }
+  ],
+  "hints": []
+}
