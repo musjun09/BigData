@@ -1,5 +1,7 @@
 server:
   port: 8888
+  servlet:
+    context-path: /
 logging:
   path: logs
   file: ruleEngine.log
@@ -8,7 +10,7 @@ spring:
     name: ruleEngine
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://slave1:3306/knowledge_graph?serverTimezone=GMT
+    url: jdbc:mysql://cdh217:3306/knowledge_graph?serverTimezone=GMT
     username: root
     password: 123456
 mybatis:

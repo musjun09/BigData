@@ -17,7 +17,7 @@ public class HugegraphConfig {
     @Bean
     public HugeClient hugeClient(){
         return new HugeClientBuilder(hugegraphProperties.getUrl(), hugegraphProperties.getGraph())
-                .configUser(hugegraphProperties.getUsername(), hugegraphProperties.getPassword())
+//                .configUser(hugegraphProperties.getUsername(), hugegraphProperties.getPassword())
                 .build();
     }
 }
